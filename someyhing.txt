@@ -1,0 +1,7 @@
+  "nodemonConfig": {
+    "ignore": [
+      "client/*"
+    ],
+    "delay": 1500
+  }
+}

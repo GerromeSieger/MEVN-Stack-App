@@ -33,5 +33,5 @@ app.use('/client', express.static(path.resolve(__dirname, '../dist')))
 
 // Spin up the Application
 app.listen(port, () => {
-  log.info(`Server Running on port ${port}`)
+  log.info(`Server Running on port 3000`)
 })

@@ -29,10 +29,11 @@
     "nodemon": "^2.0.12",
     "prettier": "^2.3.2"
   },
+  
   "nodemonConfig": {
-    "ignore": [
-      "client/*"
-    ],
-    "delay": 1500
-  }
+      "ignore": [
+        "client/*"
+      ],
+      "delay": 1500
+    }
 }

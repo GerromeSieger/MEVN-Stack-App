@@ -1,0 +1,30 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: npm run dev:server
+    ports:
+      - "3000:3000"
+   # volumes:
+  #    - .:/app1     
+    depends_on:
+      - "mongo"
+
+  client:
+    build: 
+      context: ./client
+    ports:
+      - "80:80"
+   # volumes:
+  #    - .:/usr/share/nginx/html      
+
+  mongo:
+    image: mongo:4.4
+    ports: 
+      - 27017:27017
+    env_file: ./.env
+    environment:
+      - MONGO-INITDB_ROOT_USERNAME=$MONGO_USERNAME
+      - MONGO-INITDB_ROOT_PASSWORD=$MONGO_PASSWORD
+      - MONGODB_URI=$MONGO_URI
+    stdin_open: true

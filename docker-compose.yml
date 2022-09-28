@@ -1,22 +1,19 @@
 version: '3'
 services:
   web:
+    image: gerrome/mevn-stack-app_web:1
     build: .
-    command: npm run dev:server
     ports:
-      - "3000:3000"
-   # volumes:
-  #    - .:/app1     
+      - "3000:3000"   
     depends_on:
       - "mongo"
 
   client:
+    image: gerrome/mevn-stack-app_client:1
     build: 
       context: ./client
     ports:
-      - "80:80"
-   # volumes:
-  #    - .:/usr/share/nginx/html      
+      - "80:80"     
 
   mongo:
     image: mongo:4.4

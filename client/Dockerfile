@@ -12,17 +12,17 @@ COPY . .
 
 RUN npm run build
 
+CMD ["npm", "run", "serve"]
 
+#FROM nginx:stable-alpine
 
-FROM nginx:stable-alpine
+#COPY --from=build /app/client/dist /usr/share/nginx/html
 
-COPY --from=build /app/client/dist /usr/share/nginx/html
+#RUN mkdir /usr/share/nginx/html/client
 
-RUN mkdir /usr/share/nginx/html/client
+#COPY --from=build /app/client/dist /usr/share/nginx/html/client
 
-COPY --from=build /app/client/dist /usr/share/nginx/html/client
+#COPY default.conf /etc/nginx/conf.d/default.conf:ro
 
-COPY default.conf /etc/nginx/conf.d/default.conf:ro
-
-CMD ["nginx", "-g", "daemon off;"]
+#CMD ["nginx", "-g", "daemon off;"]
 

@@ -29,7 +29,7 @@ app.use(express.json())
 app.use('/api', apiRoutes)
 
 // Register web routes
-app.use('/client', express.static(path.resolve(__dirname, '../dist')))
+app.use('/', express.static(path.resolve(__dirname, '../dist')))
 
 // Spin up the Application
 app.listen(port, () => {

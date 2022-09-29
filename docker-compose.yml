@@ -2,11 +2,11 @@ version: '3'
 services:
   web:
   #  image: gerrome/mevn-stack-app_web:1
-    build: .
-    ports:
+   build: .
+   ports:
       - "3000:3000"
-    env_file: ./.env	   
-    depends_on:
+   env_file: ./.env	   
+   depends_on:
       - "mongo"    
 
   client:
@@ -30,8 +30,6 @@ services:
   nginx:
     build: ./nginx
     ports: 
-      - 80:80 
+      - 80:80
     depends_on:
-      client:
-        condition: service_completed_successfully 
-    stdin_open: true  
+      - client

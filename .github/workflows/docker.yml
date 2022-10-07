@@ -34,4 +34,11 @@ jobs:
         with:
           context: ./client
           push: true
-          tags: gerrome/mevn-stack-app_client:1          
+          tags: gerrome/mevn-stack-app_client:1    
+
+      - name: Build and push nginx
+        uses: docker/build-push-action@v3
+        with:
+          context: ./nginx
+          push: true
+          tags: gerrome/mevn-stack-app_nginx:1                      

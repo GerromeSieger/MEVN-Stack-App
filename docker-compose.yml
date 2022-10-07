@@ -1,8 +1,8 @@
 version: '3'
 services:
   web:
-  #  image: gerrome/mevn-stack-app_web:1
-   build: .
+    image: gerrome/mevn-stack-app_web:1
+   #build: .
    ports:
       - "3000:3000"
    env_file: ./.env	   
@@ -10,9 +10,9 @@ services:
       - "mongo"    
 
   client:
-  #  image: gerrome/mevn-stack-app_client:1
-    build: 
-      context: ./client
+    image: gerrome/mevn-stack-app_client:1
+  #  build: 
+  #   context: ./client
     ports:
       - 8080:8080
 
@@ -28,7 +28,8 @@ services:
     stdin_open: true
 
   nginx:
-    build: ./nginx
+    image: gerrome/mevn-stack-app_nginx:1
+    #build: ./nginx
     ports: 
       - 80:80
     depends_on:

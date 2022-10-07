@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const UsersService = {
   http: axios.create({
-    baseURL: 'http://localhost:3000/api/users',
+    baseURL: 'http://192.168.56.118:3000/api/users',
   }),
   get() {
     return this.http.get()

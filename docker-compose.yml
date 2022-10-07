@@ -2,17 +2,17 @@ version: '3'
 services:
   web:
     image: gerrome/mevn-stack-app_web:1
-   #build: .
-   ports:
+    #build: .
+    ports:
       - "3000:3000"
-   env_file: ./.env	   
-   depends_on:
+    env_file: ./.env	   
+    depends_on:
       - "mongo"    
 
   client:
     image: gerrome/mevn-stack-app_client:1
-  #  build: 
-  #   context: ./client
+ #   build: 
+ #   context: ./client
     ports:
       - 8080:8080
 

@@ -16,8 +16,6 @@ RUN npm run build
 
 FROM nginx:stable-alpine
 
-EXPOSE 8080
-
 COPY --from=build /app/client/dist /usr/share/nginx/html
 
 RUN mkdir /usr/share/nginx/html/client

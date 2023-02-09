@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const UsersService = {
   http: axios.create({
-    baseURL: 'http://victorifah.20.84.39.184.nip.io/api/users',
+    baseURL: 'http://victor.20.84.39.184.nip.io/api/users',
   }),
   get() {
     return this.http.get()

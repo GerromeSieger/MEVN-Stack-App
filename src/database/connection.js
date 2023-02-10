@@ -4,7 +4,7 @@ const trunks = require('trunks-log')
 const log = new trunks('DBCONN')
 
 mongoose.connection.on('connecting', () => {
-  log.info(`Connecting to Mongo at mongodb://mongodb:27017/mevn-app`)
+  log.info(`Connecting to Mongo at mongodb://username:password@mongodb:27017`)
 })
 
 mongoose.connection.on('connected', () => {
@@ -17,7 +17,7 @@ mongoose.connection.on('error', (error) => {
 
 function establishDbConnection() {
   try {
-    mongoose.connect('mongodb://mongodb:27017/mevn-app', {
+    mongoose.connect(`mongodb://username:password@mongodb:27017`, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })

@@ -1,5 +1,5 @@
 function cors(req, res, next) {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:8080')
+  res.header('Access-Control-Allow-Origin', 'http://victor.20.84.39.184.nip.io')
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
   res.header(
     'Access-Control-Allow-Headers',
